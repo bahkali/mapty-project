@@ -1,0 +1,3 @@
+# MAPTY PROJECT
+
+## LICENSE
