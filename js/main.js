@@ -119,6 +119,18 @@ class App {
     inputCadence.closest('.form__row').classList.toggle('form__row--hidden');
   }
 
+  _hideForm() {
+    // Clear input fields
+    inputDistance.value =
+      inputCadence.value =
+      inputDuration.value =
+      inputElevation.value =
+        '';
+    form.style.display = 'none';
+    form.classList.add('hidden');
+    setTimeout(() => (form.style.display = 'grid'), 1000);
+  }
+
   _newWorkout(e) {
     // helper functions
     const validInputs = (...inputs) =>
@@ -169,12 +181,7 @@ class App {
     this._renderWorkout(workout);
     // hide form + clear input fields
 
-    // Clear input fields
-    inputDistance.value =
-      inputCadence.value =
-      inputDuration.value =
-      inputElevation.value =
-        '';
+    this._hideForm();
   }
   // Display maker
   _renderWorkoutMarker(workout) {
@@ -189,7 +196,9 @@ class App {
           className: `${workout.type}-popup`,
         })
       )
-      .setPopupContent('Workout')
+      .setPopupContent(
+        `${workout.type === 'running' ? '🏃‍♂️' : '🚴‍♀️'} ${workout.description}`
+      )
       .openPopup();
   }
 
@@ -201,7 +210,7 @@ class App {
             <h2 class="workout__title">${workout.description}</h2>
             <div class="workout__details">
               <span class="workout__icon">${
-                workout.name === 'running' ? '🏃‍♂️' : '🚴‍♀️'
+                workout.type === 'running' ? '🏃‍♂️' : '🚴‍♀️'
               }</span>
               <span class="workout__value">${workout.distance}</span>
               <span class="workout__unit">km</span>
