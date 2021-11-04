@@ -1,7 +1,9 @@
 # MAPTY PROJECT
 
-This is a app that will help you map your workouts.
+This is a app that will help you map your workouts. Using Javascript and its libraries to build it.
 this project was part of complete-javascript-course by jonas schmedtmann on Udemy.
+
+![](img/Mapty.png)
 
 ## Technologies and Libraries
 
@@ -19,10 +21,19 @@ L.marker([51.5, -0.09]).addTo(map)
 
 ```
 
+## Futur Upgrade
+
+- Ability to edit a workout;
+- Ability to delete a workout;
+- Ability to delete all workouts;
+- Ability to sort workouts by a certain field (e.g. distance);
+- Re-build the error and confirmation messages;
+- Ability to position the map to show all workouts;
+- Ability to draw lines and shapes instead of just point;
+  Using Different Libraries you can:
+- Geocode location from coordinates ("Run in Faro, Portugal")
+- Display weather data from workout time and place
+
 ## LICENSE
 
 [MIT License](LICENSE)
-
-```
-
-```
